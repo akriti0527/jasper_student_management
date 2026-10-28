@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Student Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join to access student management system</p>
+            
+            <div id="alertMessage" class="alert"></div>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required minlength="6" placeholder="Min 6 characters">
+                </div>
+                <button type="submit" class="btn btn-block">Register</button>
+            </form>
+
+            <div class="links">
+                Already registered? <a href="/login.html">Log In</a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>

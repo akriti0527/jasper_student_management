@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Records</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="dashboard-navbar">
+        <h1>🎓 Student Portal</h1>
+        <div class="user-badge">
+            <span>Welcome, <strong id="userName">User</strong> (<span id="userEmail" style="color: #94a3b8;"></span>)</span>
+            <button id="logoutBtn" class="btn btn-danger btn-sm">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Add Student Form -->
+        <section class="card">
+            <div class="card-header">
+                <h3>Add New Student</h3>
+            </div>
+            <div id="studentFormAlert" class="alert"></div>
+            
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="rollNo">Roll Number</label>
+                    <input type="text" id="rollNo" required placeholder="e.g. CS101">
+                </div>
+                <div class="form-group">
+                    <label for="name">Student Name</label>
+                    <input type="text" id="name" required placeholder="e.g. Alice Smith">
+                </div>
+                <div class="form-group">
+                    <label for="studentEmail">Student Email</label>
+                    <input type="email" id="studentEmail" required placeholder="alice@university.edu">
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" required placeholder="Computer Science">
+                </div>
+                <div class="form-group">
+                    <label for="course">Course / Degree</label>
+                    <input type="text" id="course" required placeholder="B.Tech Computer Science">
+                </div>
+                <div class="form-group">
+                    <label for="gpa">GPA (0.0 - 10.0)</label>
+                    <input type="number" step="0.1" min="0" max="10" id="gpa" required placeholder="8.5">
+                </div>
+                <button type="submit" class="btn btn-block">Submit Student Record</button>
+            </form>
+        </section>
+
+        <!-- View Students & Jasper PDF Export -->
+        <section class="card">
+            <div class="card-header">
+                <h3>Enrolled Students (<span id="studentCount">0</span>)</h3>
+                <button id="downloadPdfBtn" class="btn btn-success btn-sm">
+                    📄 Export Jasper PDF
+                </button>
+            </div>
+            <div id="tableAlert" class="alert"></div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Course</th>
+                            <th>GPA</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: #94a3b8;">Loading student records...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
